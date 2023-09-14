@@ -1,0 +1,16 @@
+
+body {
+    text-align: center;
+    display: flexbox;
+}
+
+#recuadro {
+    width: 300px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 5px solid yellow;
+    background-color: gray;
+}
+select, input[type="number"] {
+    margin-bottom: 10px;
+}

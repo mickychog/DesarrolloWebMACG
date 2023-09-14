@@ -1,16 +1,11 @@
 <?php
-if(isset($_GET['tamano'])) {
-    $dimension = (int)$_GET['tamano'];
-} else {
-    // Redirigir de vuelta al formulario si no se proporciona una dimensión válida
-    header("Location: ejercicio3.php");
-    exit();
-}
+    $filas = $_GET['filas'];
+    $columnas = $_GET['columnas'];
 
 $tablero = array();
 
-for ($fila = 0; $fila < $dimension; $fila++) {
-    for ($columna = 0; $columna < $dimension; $columna++) {
+for ($fila = 0; $fila < $filas; $fila++) {
+    for ($columna = 0; $columna < $columnas; $columna++) {
         if (($fila + $columna) % 2 == 0) {
             $tablero[$fila][$columna] = 'blanco';
         } else {
@@ -23,12 +18,12 @@ for ($fila = 0; $fila < $dimension; $fila++) {
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Tablero de Ajedrez</title>
+    <title>Tablero </title>
     <style>
         .tablero {
             display: grid;
-            grid-template-columns: repeat(<?php echo $dimension; ?>, 50px);
-            grid-template-rows: repeat(<?php echo $dimension; ?>, 50px);
+            grid-template-columns: repeat(<?php echo $columnas; ?>, 50px);
+            grid-template-rows: repeat(<?php echo $filas; ?>, 50px);
         }
         
         .casilla {
@@ -47,7 +42,7 @@ for ($fila = 0; $fila < $dimension; $fila++) {
     </style>
 </head>
 <body>
-    <h1>Tablero de Ajedrez</h1>
+    <h1>Tablero</h1>
     <div class="tablero">
         <?php
         foreach ($tablero as $fila) {
