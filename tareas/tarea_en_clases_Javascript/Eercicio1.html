@@ -2,18 +2,41 @@
 1. Realizar un programa para calcular el mayor y el menor de tres números, solicite mediante prompts los números 
 e imprima el mayor y el menor
 -->
-<script>
-    var a=parseInt(prompt("introduce a"));
-    var b=parseInt(prompt("introduce b"));
-    var c=parseInt(prompt("introduce c"));
-    if (a>b)
-        if(a>c)
-        document.write("el mayor es :"+a);
-        else
-        document.write("el mayor es:"+c);
-    else
-    if (b>c)
-    document.write("el mayor es: "+b);
-    else
-    document.write("el mayor es:"+c);
-</script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1</title>
+</head>
+<body style="text-align: center">
+    <h1>Calculadora de Mayor y Menor</h1>
+    <h2>Resultado:</h2>
+    <script>
+        var a=parseInt(prompt("introduce a"));
+        var b=parseInt(prompt("introduce b"));
+        var c=parseInt(prompt("introduce c"));
+        
+        var mayor, menor;
+
+if (a >= b && a >= c) {
+    mayor = a;
+} else if (b >= a && b >= c) {
+    mayor = b;
+} else {
+    mayor = c;
+}
+
+if (a <= b && a <= c) {
+    menor = a;
+} else if (b <= a && b <= c) {
+    menor = b;
+} else {
+    menor = c;
+}
+document.write("El número mayor es: " + mayor +"<br>");
+document.write("El número menor es: " + menor);
+    </script>
+    
+</body>
+</html>
