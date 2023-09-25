@@ -1,0 +1,24 @@
+<!-- 2. Realzar un programa en javascript que permita calcular el factorial de un numero introducido mediante promps,
+     utilizar funciones 
+-->
+<script>
+    
+
+    function calcularFactorial(numero) {
+    if (numero < 0) {
+        return "No se puede calcular el factorial de un número negativo";
+    } else if (numero === 0 || numero === 1) {
+        return 1;
+    } else {
+        var factorial = 1;
+        for (var i = 2; i <= numero; i++) {
+            factorial *= i;
+        }
+        return factorial;
+    }
+}
+
+    var numero=parseInt(prompt("introduce el numero"));
+    var factorial = calcularFactorial(numero);
+    document.write( "El factorial de " + numero + " es " + factorial);
+</script>

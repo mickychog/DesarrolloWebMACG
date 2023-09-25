@@ -1,0 +1,30 @@
+<!-- 4. Definir una función que determine si la cadena de texto que se le pasa como parámetro es un palíndromo, es decir, 
+    si se lee de la misma forma desde la izquierda y desde la derecha. Ejemplo de palíndromo complejo: 
+    "La ruta nos aporto otro paso natural". -->
+<script>
+
+function palindromo(cadena) {
+    // Eliminar espacios y convertir a minúsculas
+    cadena = cadena.replace(/\s/g, '').toLowerCase();
+    
+    // Revertir la cadena
+    var cadenaRevertida = cadena.split('').reverse().join('');
+
+    // Comparar con la cadena original
+    return cadena === cadenaRevertida;
+}
+
+var texto = prompt("Introduce una cadena de texto");
+var resultado = palindromo(texto);
+
+if (resultado) {
+    document.write("La cadena es un palíndromo.");
+} else {
+    document.write("La cadena no es un palíndromo.");
+}
+
+
+
+
+
+</script>
