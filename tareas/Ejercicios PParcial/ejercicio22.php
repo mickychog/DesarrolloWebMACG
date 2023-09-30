@@ -37,10 +37,6 @@ class Cola {
     public function mostrar() {
         return $this->elementos;
     }
-
-    public function mostrarTipo() {
-        return $this->tipo;
-    }
 }
 
 // Inicializar la cola desde la sesión o crear una nueva
@@ -53,11 +49,7 @@ if (isset($_SESSION["cola"])) {
 }
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    if (isset($_POST["cambiar_tipo"])) {
-        $nuevo_tipo = $_POST["tipo"];
-        $_SESSION["cola"] = new Cola($nuevo_tipo);
-        $cola = $_SESSION["cola"];
-    } elseif (isset($_POST["accion"])) {
+    if (isset($_POST["accion"])) {
         if ($_POST["accion"] === "insertar_delante" && isset($_POST["elemento"])) {
             $elemento = $_POST["elemento"];
             $cola->insertarDelante($elemento);
@@ -79,11 +71,23 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 <body>
     <h1>Cola (Tipo: <?= $cola->mostrarTipo(); ?>)</h1>
 
-    <h2>Cambiar Tipo de Cola</h2>
+    <h2>Operaciones</h2>
     <form action="cola.php" method="post">
-        <label for="tipo">Seleccionar Tipo:</label>
-        <select name="tipo">
-            <option value="normal">Cola Normal</option>
-            <option value="dobleentrada">Cola Doble Entrada</option>
-        </select>
-        <input type
+        <?php if ($cola->mostrarTipo() === 'dobleentrada') { ?>
+            <label for="elemento">Elemento:</label>
+            <input type="text" name="elemento" required>
+            <br>
+            <input type="submit" name="accion" value="Insertar Delante">
+        <?php } ?>
+
+        <label for="elemento">Elemento:</label>
+        <input type="text" name="elemento" required>
+        <br>
+        <input type="submit" name="accion" value="Insertar Detras">
+        <input type="submit" name="accion" value="Eliminar">
+    </form>
+
+    <h2>Contenido de la Cola</h2>
+    <pre><?= print_r($cola->mostrar()); ?></pre>
+</body>
+</html>

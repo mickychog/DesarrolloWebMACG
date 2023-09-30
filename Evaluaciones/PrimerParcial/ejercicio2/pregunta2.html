@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pregunta 2</title>
+    <style>
+        body{
+            display: flex; 
+            justify-content: center;
+        }
+        .item1 {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            padding: 20px;
+        }
+        .contenedor {
+            width: 400px;
+            display: inline-block;
+            padding: 20px;
+            border: 3px solid #F79646;
+        }
+        .contenedor1 {
+
+            display: inline-block;
+
+        }
+        .boton
+        {   
+            display: flex ;
+            justify-content: center;
+        }
+        
+    </style>
+</head>
+<body>
+    <body>
+        <div class="contenedor">
+            <div style="display: flex;justify-content: center;">
+                <h2>Calendario</h2>
+            </div>
+            
+            <form action="calendario.php" method="post">
+                <div class="contenedor1">
+                    <div class="item1">
+                        <div>
+                            <label for="mes">Mes:</label>
+                        <select name="mes" id="mes" style="border: 3px solid #F79646;">
+                            <option value="enero">Enero</option>
+                            <option value="febrero">Febrero</option>
+                            <option value="marzo">Marzo</option>
+                            <option value="abril">Abril</option>
+                            <option value="mayo">Mayo</option>
+                            <option value="junio">Junio</option>
+                            <option value="julio">Julio</option>
+                            <option value="agosto">Agosto</option>
+                            <option value="septiembre">Septiembre</option>
+                            <option value="octubre">OCtubre</option>
+                            <option value="noviembre">Noviembre</option>
+                            <option value="diciembre">Diciembre</option>
+                        </select>
+                        <br>
+                        </div>
+                        <div>
+                            <label for="anio">Año:</label>
+                        <input type="number" name="anio" id="anio" style="border: 3px solid #F79646;">
+                        <br>
+                        </div>
+                    </div>
+                    <div class="boton">                    
+                        <input type="submit" value="Enviar" style="border: 3px solid #F79646; background-color: #F79646;border-radius:  7px;">
+                    </div>
+                </div>
+
+                    
+                    
+
+            </form>
+
+        </div>   
+</body>
+</html>
