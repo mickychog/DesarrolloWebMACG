@@ -1,0 +1,57 @@
+<!-- crear un input n que solicite el numero de elementos, y un boton llenar al presionar llenar,
+debe crear n elementos y el boton calcular el mayor debe calcular el mayor de los n numeros 
+y cambiar de color el fondo y colocar un texto que diga mayor -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <label for="n">Ingrese numero de elementos</label>
+    <input type="number" id="n">
+    <button onclick="llenar()">Llenar</button>
+    
+    <div id="elementos"></div>
+
+    <!-- <button onclick="calcularMayor()">Calcular Mayor</button> -->
+</body>
+<script>
+        function llenar(){
+            var n=parseInt(document.getElementById("n").value);
+            html="";
+            for(i=0;i<n;i++){
+                html+=`<input type="number" name=numeros><span name=texto></span><br>`;
+            }
+            html+='<button onclick="calcularMayor()">Calcular Mayor</button>'
+            document.getElementById("elementos").innerHTML=html;
+        }
+
+        function calcularMayor(){
+            numeros = document.getElementsByName("numeros");
+            texto = document.getElementsByName("texto");
+            mayort=texto[0];
+            mayor=numeros[0];
+            html="Este es el numero Mayor";
+            for ( i = 1; i < numeros.length; i++) {
+                valor = parseInt(mayor.value);
+                valorComparar=parseInt(numeros[i].value);
+
+                if (valorComparar>valor) {
+                    mayor=numeros[i];
+                    mayort=texto[i];
+                }
+            }
+            for ( i = 0; i < numeros.length; i++) {
+                numeros[i].style.backgroundColor="";
+                texto[i].innerHTML="";
+            }
+
+            mayor.style.Color = "yellow";
+            mayor.style.backgroundColor = "red";
+            mayort.innerHTML=html;
+        }
+</script>
+</html>

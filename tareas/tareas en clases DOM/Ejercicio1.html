@@ -1,0 +1,51 @@
+<!-- REalizar un programa en javascript que calcule el mayor de tres numeros, para esto crear 3 inputs de valores a b y c 
+y el boton calcular mayoe al presionar el boton mayor debe coloca de color de fondo a rojo del elemnto mayor -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Calcular mayor de tres </h1>
+    
+        <div>
+            <label for="a">Numero 1</label>
+            <input type="number" id="a">
+        </div>
+        <div>
+            <label for="b">Numero 2</label>
+            <input type="number" id="b">
+        </div>
+        <div>
+            <label for="c">Numero 3</label>
+            <input type="number"  id="c">
+        </div>
+
+        <input type="button" value="Calcular" onclick="calcularMayor()">
+
+</body>
+<script>
+    function calcularMayor() {
+        var a = parseInt(document.getElementById("a").value);
+        var b = parseInt(document.getElementById("b").value);
+        var c = parseInt(document.getElementById("c").value);
+
+        var mayor;
+        if (a >= b && a >= c) {
+            mayor = "a";
+        } else if (b >= a && b >= c) {
+            mayor = "b";
+        } else {
+            mayor = "c";
+        }
+
+        document.getElementById("a").style.backgroundColor = "";
+        document.getElementById("b").style.backgroundColor = "";
+        document.getElementById("c").style.backgroundColor = "";
+
+        document.getElementById(mayor).style.backgroundColor = "red";
+    }
+</script>
+</html>
