@@ -1,0 +1,37 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+
+.centrado{
+    text-align: center;
+}
+
+h1 {
+    font-size: 24px;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+td {
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    font-size: 48px;
+    cursor: pointer;
+    background-color: #fff;
+    user-select: none;
+    position: relative;
+    border: 2px solid black;
+}
+p#mensaje {
+    font-size: 18px;
+    color: red;
+    margin-top: 10px;
+}

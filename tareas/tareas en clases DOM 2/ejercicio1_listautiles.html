@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="util">util</label>
+    <input type="text" name="util" id="util">
+    <button id="boton">añadir</button>
+    <button id="boton_borrar">Borrar</button>
+    <ul id="lista"></ul>
+</body>
+
+<script>
+    document.getElementById('boton').addEventListener('click',function(){
+        const elemento=document.createElement('li');
+        elemento.innerHTML=document.getElementById('util').value;
+        document.getElementById('lista').appendChild(elemento);
+
+    })
+    document.getElementById('boton_borrar').addEventListener('click',function(){
+        const lista = document.getElementById('lista');
+        const elementos = lista.getElementsByTagName('li');
+        
+        if (elementos.length > 0) {
+            lista.removeChild(elementos[elementos.length - 1]);
+        }
+    })
+</script>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilos.css">
+    <title>Document</title>
+    
+</head>
+<body >
+    <div class="centrado">
+        <h1>Tres en Raya</h1>
+        <table>
+            <tr >
+                <td class="borde-derecho" onclick="marcar('c1')" id="c1">&nbsp</td>
+                <td class="borde-derecho" onclick="marcar('c2')" id="c2">&nbsp</td>
+                <td onclick="marcar('c3')" id="c3">&nbsp</td>
+            </tr>
+            <tr>
+                <td class="borde-derecho borde-superior" onclick="marcar('c4')"id="c4">&nbsp</td>
+                <td class="borde-derecho borde-superior" onclick="marcar('c5')"id="c5">&nbsp</td>
+                <td class="borde-superior" onclick="marcar('c6')"id="c6">&nbsp</td>
+            </tr>
+            <tr>
+                <td class="borde-derecho borde-superior" onclick="marcar('c7')"id="c7">&nbsp</td>
+                <td class="borde-derecho borde-superior" onclick="marcar('c8')"id="c8">&nbsp</td>
+                <td class="borde-superior" onclick="marcar('c9')"id="c9">&nbsp</td>
+            </tr>
+        </table>
+        <p id="mensaje"></p>
+    </div>
+    
+    <script>
+        var turno='X';
+        function cambiarturno(){
+            if (turno=='X'){
+                turno='O';
+            }
+            else 
+            {
+                turno='X';
+            }
+
+        }
+        function marcar(casilla){
+            
+            
+            if(document.getElementById(casilla).innerHTML == '&nbsp;'){
+                document.getElementById(casilla).innerHTML=turno;
+                cambiarturno();
+            }
+            else{
+                document.getElementById('mensaje').innerHTML='ya esta ocupado';
+            }
+            
+        }
+    </script>
+</body>
+</html>
