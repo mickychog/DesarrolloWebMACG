@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+
+</head>
+<body>
+    <h1>Pregunta 1</h1>
+    <button id="mostrarButton">Mostrar</button>
+    <div id="lista"></div>
+
+    <script>
+        document.getElementById('mostrarButton').addEventListener('click', function() {
+            fetch('lista.php')
+                .then(response => response.json())
+                .then(data => {
+                    var listaDiv = document.getElementById('lista');
+                    var table = document.createElement('table');
+                    var thead = document.createElement('thead');
+                    var tbody = document.createElement('tbody');
+
+                    var headers = ['Nro', 'Apellidos', 'Nombres', 'Edad', 'Materia', 'Nota'];
+                    var headerRow = document.createElement('tr');
+                    headers.forEach(headerText => {
+                        var th = document.createElement('th');
+                        th.appendChild(document.createTextNode(headerText));
+                        headerRow.appendChild(th);
+                    });
+                    thead.appendChild(headerRow);
+                    table.appendChild(thead);
+
+
+                    data.forEach(item => {
+                        var row = document.createElement('tr');
+                        Object.values(item).forEach(value => {
+                            var cell = document.createElement('td');
+                            cell.appendChild(document.createTextNode(value));
+                            row.appendChild(cell);
+                        });
+                        tbody.appendChild(row);
+                    });
+                    table.appendChild(tbody);
+
+                    listaDiv.innerHTML = '';
+                    listaDiv.appendChild(table);
+                })
+                .catch(error => console.error('Error:', error));
+        });
+    </script>
+</body>
+</html>

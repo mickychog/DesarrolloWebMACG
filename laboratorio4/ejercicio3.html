@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista compras</title>
+</head>
+<body>
+    <div class="lista-compras">
+        <label for="elemento">Introduce un elemento a la lista: </label>
+        <input type="text" name="elemento" id="elemento">
+        <br>
+        <button onclick="agrergarElementoLista();">Añadir</button>
+        
+    </div>
+
+    <div class="elementos" id="lista-elementos">
+
+    </div>
+
+
+    <script>
+        var elementos = [];
+        
+        function agrergarElementoLista(){
+ 
+            var elemento = document.getElementById('elemento').value;
+            var lista = document.getElementById('lista-elementos');
+
+            elementos.push(elemento);
+
+             var lista_producto = '';
+             var producto = '';
+            elementos.forEach(elem =>{
+
+                producto = `${elem.toString()}<br>`;
+
+                var producto_id = '';
+                if(producto.includes('de')){
+                    producto_id = `<mark>${producto}</mark>`;
+                    producto = producto_id;
+                }
+            });
+            
+
+            lista.innerHTML += producto;
+        }
+        console.log(elementos);
+    </script>
+</body>
+</html>
