@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="ajax.js"></script>
+    <script src="fetch.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <header>
+    <div id="menu">        
+            <div id="botones"></div>
+            <a id="boton" href="javascript:cargarBotones('botones.html')">Menu</a>      
+    </div>
+    </header>
+    <main>
+        <div id="titulo">
+            <div id="nombre"></div>
+            <div id="carnet"></div>
+        </div>
+        <div id="principal"></div>
+        
+
+    </main>
+    <footer>
+        <div id="historial">Historial<br></div>
+    </footer>
+    
+</body>
+<script>
+    function mostrarNombre() {
+        var nombre = 'Miguel Angel Choque Garcia';
+        var carnet = '111-314';
+        
+        var divNombre = document.getElementById('nombre');
+        var divCarnet = document.getElementById('carnet');
+        divNombre.textContent = 'Nombre: ' + nombre;
+        divCarnet.textContent = 'Carnet: ' + carnet;
+    }
+    
+    document.getElementById('boton').addEventListener('click', function() {
+        mostrarNombre();
+    });
+
+    // Función para cargar el contenido en el div "historial"
+    function historial(contenido) {
+            var historial = document.getElementById('historial');
+            var titulo = document.getElementById('titulo');
+
+            // Agregar el botón presionado al historial
+            historial.innerHTML += "Botón presionado: " + contenido + "<br>";
+
+            // Mostrar la pregunta asociada al botón presionado en el div "titulo"
+            titulo.innerHTML = "  " + contenido;
+    }
+</script>
+</html>
+
