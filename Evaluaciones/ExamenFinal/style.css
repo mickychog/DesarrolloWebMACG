@@ -115,30 +115,42 @@ footer{
     box-sizing: border-box;
 }
 .contenido{
-    margin-left: 120px;
-    margin-right: 120px;
-    display: flex;
-    justify-content: space-between; /* Espacio entre los elementos */
-    align-items: center;
-    height: 100vh;
-    margin: 0;
+    margin-left: 140px;
+    margin-right: 140px;
 }
 .info{
-    width: 540px;
-    border: 1px solid  rgb(0, 0, 0);
+    width: 500px;
+    border-top: 7px solid  rgb(226, 226, 226);
+    border-left: 7px solid  rgb(226, 226, 226);
 }
-body {
-    
-  }
-
-  .div-izquierdo,
-  .div-derecho {
-    flex: 1; /* Que ocupen el mismo espacio */
-  }
-
-  .imagen-centrada {
-    max-width: 100%; /* Ajusta el tamaño máximo de la imagen */
-    height: auto; /* Mantiene la proporción original de la imagen */
-    display: block; /* Elimina el espacio adicional debajo de la imagen */
-    margin: 0 auto; /* Centra la imagen horizontalmente */
-  }
+.sup{
+    color: rgb(50, 88, 159);
+    text-align: center;
+    padding: 10px;
+    background-color: rgb(153, 187, 249);
+    border-top-left-radius: 3px;
+}
+.inf{
+    color: rgb(101, 101, 101);
+    text-align:left;
+    padding: 20px;
+    padding-top: 50px;
+    background-color: rgb(255, 255, 255);
+}
+h2{
+    margin: 0;
+}
+h3{
+    margin: 0;
+}
+.img-perfil{
+    width: 80px;
+    position: absolute;
+    top: 24%;
+    left: 42%;
+    transform: translate(-50%, -50%);
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 50%;
+    border: 5px solid white;
+}
