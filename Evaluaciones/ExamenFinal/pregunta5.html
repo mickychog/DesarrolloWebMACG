@@ -1,0 +1,52 @@
+<!-- pregunta5.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pregunta 5</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+
+        #colorInput {
+            margin-bottom: 10px;
+        }
+
+        select, button {
+            margin: 5px 0;
+        }
+
+        .elemento {
+            padding: 20px;
+            margin: 10px;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    <h1>Cambiar Color del Elemento</h1>
+
+    <label for="colorInput">Selecciona un color:</label>
+    <input type="color" id="colorInput">
+
+    <label for="elementosSelect">Selecciona un elemento:</label>
+    <select id="elementosSelect">
+        <option value="menu">Menu</option>
+        <option value="titulo">Titulo</option>
+        <option value="sub-menu">Submenu</option>
+        <option value="contenido">Contenido</option>
+        <option value="pie">Pie</option>
+    </select>
+
+    <label for="colorSelect">Selecciona una opción:</label>
+    <select id="colorSelect">
+        <option value="colorFondo">Color de Fondo</option>
+        <option value="colorFrente">Color de Frente</option>
+    </select>
+
+    <button onclick="javascript:cambiarColor()">Mostrar</button>
+</body>
+</html>

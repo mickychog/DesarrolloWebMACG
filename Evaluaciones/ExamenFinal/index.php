@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <script src="ajax.js"></script>
+    <script src="fetch.js"></script>
     <title>Examen Final</title>
 </head>
 <body>
@@ -13,18 +15,18 @@
                 <img src="usfx.png" alt="" class="imagen">
             </div>
             <div>
-                <ul class="preguntas">
-                    <li><a href="">Pregunta 1</a></li>
-                    <li><a href="">Pregunta 2</a></li>
+                <ul class="preguntas" id="menu">
+                    <li><a href="index.php">Pregunta 1</a></li>
+                    <li><a href="javascript:cargarSubmenu('pregunta2.html')">Pregunta 2</a></li>
                     <li><a href="">Pregunta 3</a></li>
-                    <li><a href="">Pregunta 4</a></li>
-                    <li><a href="">Pregunta 5</a></li>
+                    <li><a href="javascript:cargarContenidoFetch('pregunta4.php')">Pregunta 4</a></li>
+                    <li><a href="javascript:cargarContenido('pregunta5.html')">Pregunta 5</a></li>
                 </ul>
                 <div id="titulo" class="titulo"><p>Pregunta 1</p></div>
             </div>
         </Header>
         <main>
-            <section class="sub-menu">
+            <section class="sub-menu" id="sub-menu">
                 <p class="opciones">Opciones</p>
                 <ul>
                     <li>Detalle 1</li>
@@ -41,13 +43,14 @@
                     <div class="inf">
                         <p>Nombre: Miguel Angel Choque Garcia</p>
                         <p>Carrera: Ing. en Ciencias de la Computación</p>
-                        </p>Repositorio: <a href="https://github.com/mickychog/DesarrolloWebMACG/tree/6b374981bc8fec7e2c3dc435f48bae5ac55713c1/Evaluaciones/ExamenFinal">Github</a>
+                        </p>Repositorio: <a href="https://github.com/mickychog/DesarrolloWebMACG/tree/main/Evaluaciones/ExamenFinal" target="_blank">Github</a>
                     </div>
                 </div>
             </section>
+            <div id="boton"></div>
         </main>
         <footer>
-            <div id="pie" class="pie">Sucre Semestre 2-2023</div>
+            <div id="pie" class="pie">Sucre - Semestre 2-2023</div>
         </footer>
     </div>
     
