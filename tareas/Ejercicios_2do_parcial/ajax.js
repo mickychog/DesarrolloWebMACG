@@ -71,3 +71,4 @@ function calcular()
 		alert("numero fuera de rango");
 	}
 }
+
